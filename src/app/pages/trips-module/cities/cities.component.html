@@ -1,0 +1,50 @@
+<section class="trips-wrapper">
+  <div class="section-banner" style="background-image: url(assets/images/trips-banner.jpg);">
+    <div class="banner-overlay">
+      <div class="container">
+        <h2 class="banner-title">Cities</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <!-- search container -->
+    <!-- <div class="filter-wrapper mb-5">
+      <form [formGroup]="filterData">
+        <div class="row">
+          <div class="col-md-3">
+            <select class="form-control" formControlName="city">
+              <option value="" selected>City</option>
+              <option value="">1</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <input class="form-control" type="date" formControlName="checkin" placeholder="Check-in" />
+          </div>
+          <div class="col-md-3">
+            <input class="form-control" type="date" formControlName="checkout" placeholder="Check-out" />
+          </div>
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-secondary d-block w-100" (click)="showResults()"
+              [disabled]="filterData.invalid">Search</button>
+          </div>
+        </div>
+      </form>
+    </div> -->
+
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <a class="city-card" routerLink="/trips/destinations" style="background-image: url(assets/images/trips.jpg);">
+          <div class="city-overlay">All Trips</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let cityItem of cities">
+        <a class="city-card" routerLink="/trips/destinations/{{cityItem.id}}"
+          [ngStyle]="{'background-image': cityItem?.image ? 'url('+ cityItem?.image +')' : 'url(assets/images/no-image.jpg)'}">
+          <div class="city-name">{{cityItem.name}}</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

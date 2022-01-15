@@ -1,0 +1,181 @@
+<section class="offers-wrapper">
+  <div class="section-banner" style="background-image: url(assets/images/offers-banner.jpg);">
+    <div class="banner-overlay">
+      <div class="container">
+        <h2 class="banner-title">Offers</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row" *ngIf="courseContent">
+      <div class="accordion" id="coursesAccordion">
+        <!-- course requirements -->
+        <div class="accordion-item">
+          <div class="accordion-header collapsed" id="headingRequirments" data-bs-toggle="collapse" data-bs-target="#requirmentsCollapse" aria-expanded="true" aria-controls="requirmentsCollapse">
+              <span>Requirements</span>
+              <i class="fas fa-chevron-down"></i>
+          </div>
+          <div id="requirmentsCollapse" class="accordion-collapse collapse" aria-labelledby="headingRequirments" data-bs-parent="#coursesAccordion">
+            <div class="accordion-body" [innerHTML]="allCourses?.prerequisites"></div>
+          </div>
+        </div>
+
+        <!-- course content -->
+        <div class="accordion-item">
+          <div class="accordion-header collapsed" id="headingContent" data-bs-toggle="collapse" data-bs-target="#contentCollapse" aria-expanded="false" aria-controls="contentCollapse">
+              <span>Course content</span>
+              <i class="fas fa-chevron-down"></i>
+          </div>
+          <div id="contentCollapse" class="accordion-collapse collapse" aria-labelledby="headingContent" data-bs-parent="#coursesAccordion">
+            <div class="accordion-body">{{allCourses?.syllabus}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="!noOffers">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let offer of coursesOffers">
+        <div class="offer-card">
+          <div class="offer-card-header">
+            <div class="offer-overlay">
+              <div class="offer-card-title">{{offer?.title}}</div>
+            </div>
+
+            <div class="offer-hint" *ngIf="!offer.is_available">Sold out</div>
+          </div>
+
+          <div class="offer-card-body">
+            <div class="container-fluid offers-container mt-4">
+              <div class="row">
+                <div class="col-lg-6 mb-3">
+                  <div class="offer-details">
+                    <div class="details-title">
+                      <i class="fas fa-calendar-alt"></i>
+                      <span>Start Date</span>
+                    </div>
+                    <p>{{offer?.start_date}}</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <div class="offer-details">
+                    <div class="details-title">
+                      <i class="fas fa-calendar-alt"></i>
+                      <span>End Date</span>
+                    </div>
+                    <p>{{offer?.end_date}}</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <div class="offer-details">
+                    <div class="details-title">
+                      <i class="fas fa-mobile-alt"></i>
+                      <span>Contact</span>
+                    </div>
+                    <p>{{offer?.contact}}</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <div class="offer-details">
+                    <div class="details-title">
+                      <i class="fas fa-user-friends"></i>
+                      <span>Trainees</span>
+                    </div>
+                    <p>{{offer?.num_of_trainees}}</p>
+                  </div>
+                </div>
+                <div class="col-lg-12 mb-3">
+                  <div class="offer-details">
+                    <div class="details-title">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span>Address</span>
+                    </div>
+                    <p>{{offer?.address}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="appointment-section">
+              <h5>Schedule</h5>
+
+              <div class="appointment-box">
+                <div class="appointment-card" *ngFor="let appointmentItem of offer.appointments">
+                  <h3 class="box-day">{{coursesDay[appointmentItem?.day]}}</h3>
+                  <div class="box-date">
+                    <span class="box-time">{{appointmentItem?.time_from}}</span>
+                    <span class="break">-</span>
+                    <span class="box-time">{{appointmentItem?.time_to}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card-footer">
+            <div class="offer-card-price">
+              <div class="price">{{offer?.pricings[0]?.price}}</div>
+              <div class="currency">LE</div>
+            </div>
+
+            <div class="offer-card-action">
+              <button class="btn" data-bs-toggle="modal" data-bs-target="#reserveModal" (click)="getOfferDetails(offer)" [disabled]="!offer.is_available">Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="noOffers">
+      <div class="col-12">
+        <div class="wrapper-empty">
+          <i class="fas fa-ban"></i>
+          <h6>No Offers Founded.</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reserve Course Modal -->
+<div class="modal fade" id="reserveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="reserveModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reserveModalLabel">Reserve Course</h5>
+        <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form [formGroup]="reserveCourseForm">
+          <div class="mb-3">
+            <label for="studentName" class="form-label">Student Name</label>
+            <input type="text" class="form-control" formControlName="studentName" id="studentName"
+              placeholder="Student Name" />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" formControlName="email" id="email"
+              placeholder="Email" />
+          </div>
+          <div class="mb-3">
+            <label for="offerName" class="form-label">Offer Name</label>
+            <input type="text" class="form-control" formControlName="offerName" id="offerName"
+              placeholder="Offer Name" />
+          </div>
+          <div class="mb-3">
+            <label for="cost" class="form-label">Cost</label>
+            <input type="text" class="form-control" formControlName="cost" id="cost" placeholder="cost" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" data-bs-dismiss="modal" (click)="pay()" class="btn btn-primary">Pay</button>
+      </div>
+    </div>
+  </div>
+</div>

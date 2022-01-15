@@ -1,0 +1,36 @@
+<section class="courses-wrapper">
+    <div class="section-banner" style="background-image: url(assets/images/courses-banner.jpg);">
+        <div class="banner-overlay">
+          <div class="container">
+            <h2 class="banner-title">Courses</h2>
+          </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-xl-3 col-md-4 col-sm-6 mb-4">
+                <a class="course-card" routerLink="/offers" style="background-image: url(assets/images/all-offers.jpg);">
+                    <div class="course-card-data-overlay">
+                        <div class="overlay-data">
+                            <i class="fas fa-tags"></i>
+                            <h6>See All</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xl-3 col-md-4 col-sm-6 mb-4" *ngFor = "let courseItem of courses">
+                <a class="course-card" routerLink="/offers/{{courseItem.id}}" [ngStyle]="{'background-image': courseItem?.image ? 'url('+ courseItem?.image +')' : 'url(assets/images/no-image.jpg)'}">
+                    <div class="course-card-data">
+                        <h3 class="course-title">{{courseItem?.title}}</h3>
+                        <h6 class="sessions-number">
+                            <i class="fas fa-play"></i>
+                            {{courseItem?.num_of_sessions}}<span>session</span>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

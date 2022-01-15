@@ -1,0 +1,84 @@
+// colors var
+$primary: #0090db;
+$secondary: #ffc107;
+
+.course-card{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 240px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 8%);
+    // border: 1px solid rgba($color: #000, $alpha: 0.08);
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    .course-card-data{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: rgba($color: #000, $alpha: 0.7);
+        // background-color: rgba($color: $primary, $alpha: 0.9);
+        padding: 12px;
+
+        .course-title{
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            max-height: 48px;
+            overflow: hidden;
+            line-height: 22px;
+        }
+
+        .sessions-number{
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 0px;
+            color: rgba($color: #fff, $alpha: 0.85);
+            display: flex;
+            align-items: center;
+
+            i{
+                color: #fff;
+                font-size: 10px;
+                margin-right: 8px;
+            }
+            span{
+                margin-left: 4px;
+            }
+        }
+    }
+
+    .course-card-data-overlay{
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: rgba($color: $primary, $alpha: 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .overlay-data{
+            text-align: center;
+
+            i{
+                font-size: 32px;
+                margin-bottom: 16px;
+                color: #fff;
+            }
+            h6{
+                margin-bottom: 0px;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+}

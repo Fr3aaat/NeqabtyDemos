@@ -1,0 +1,51 @@
+<section class="trips-wrapper">
+    <div class="section-banner" style="background-image: url(assets/images/trips-banner.jpg);">
+        <div class="banner-overlay">
+          <div class="container">
+            <h2 class="banner-title">Trips</h2>
+          </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row" *ngIf="!noTripsFounded">
+            <div class="col-md-6 mb-4" *ngFor="let tripItem of trips">
+                <div class="trip-card">
+                    <div class="card-wrapper">
+                        <div class="card-banner" [ngStyle]="{'background-image': tripItem?.image ? 'url('+ tripItem?.image +')' : 'url(assets/images/no-image.jpg)'}"></div>
+
+                        <div class="card-container">
+                            <h5 class="card-title">{{tripItem?.name}}</h5>
+                            <p class="card-desc">{{tripItem?.description}}</p>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <h6 class="card-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>{{tripItem?.address}}</span>
+                        </h6>
+
+                        <p class="card-notes">
+                            <span class="d-inline-block me-2">Notes:</span>
+                            <span>{{tripItem?.notes}}</span>
+                        </p>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <a class="btn btn-primary" routerLink="/trips/units/{{tripItem.id}}" class="card-action">See Availability</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="noTripsFounded">
+            <div class="col-12">
+              <div class="wrapper-empty">
+                <i class="fas fa-ban"></i>
+                <h6>No Trips Founded.</h6>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>

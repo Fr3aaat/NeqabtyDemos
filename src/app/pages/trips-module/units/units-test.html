@@ -1,0 +1,279 @@
+<section class="units-wrapper">
+    <div class="section-banner" style="background-image: url(assets/images/units-banner.jpg);">
+      <div class="banner-overlay">
+        <div class="container">
+          <h2 class="banner-title">Buildings</h2>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container py-5">
+      <div class="row" *ngIf="destinations?.buildings.length > 0">
+        <form [formGroup]="chooseAvailiablePeriod">
+          <div class="col-12">
+            <div class="units-head">
+              <h4 class="mb-0"><span class="d-inline-block">{{destinations?.name}}</span>: <span class="d-inline-block text-primary">{{destinations?.buildings.length}}</span> Buildings founded.</h4>
+  
+              <button class="btn btn-primary head-action" type="button" data-bs-toggle="modal" data-bs-target="#ReserveUnitModal"
+                (click)="reserveUnit()" [disabled]="!chooseAvailiablePeriod.valid">
+                <i class="fas fa-ticket-alt me-2"></i>
+                <span>Reserve</span>
+              </button>
+            </div>
+          </div>
+  
+          <div class="col-12">
+            <!-- buildings container -->
+            <div class="row" *ngFor="let buildingItem of buildings">
+              <!-- buildings cards -->
+              <div class="col-12 mb-4" id="unit-cards-wrapper"
+                *ngFor="let unitItem of buildingItem.unit_features_classes ; let i = index">
+                <div class="unit-card" *ngIf="unitItem.pricings.length > 0">
+                  <div class="unit-card-container">
+                    <div class="unit-card-content">
+                      <h5 class="unit-name">{{buildingItem.name}}</h5>
+  
+                      <ul class="feature-list">
+                        <li class="feature-list-item" *ngFor="let feature of unitItem.categories">{{feature.name}}</li>
+                      </ul>
+                    </div>
+  
+                    <div class="unit-card-features">
+                      <h6>Features:</h6>
+  
+                      <!-- unit information list -->
+                      <div class="unit-info-list">
+                        <div class="unit-info-list-item" *ngIf="unitItem.person_no != null">
+                          <i class="fas fa-users"></i>
+                          <h5>Number of persons: <span>{{unitItem.person_no}}</span></h5>
+                        </div>
+                        <div class="unit-info-list-item" *ngIf="unitItem.rooms_no != null">
+                          <i class="fas fa-bed"></i>
+                          <h5>Number of rooms: <span>{{unitItem.rooms_no}}</span></h5>
+                        </div>
+                        <div class="unit-info-list-item" *ngIf="unitItem.see_view != false">
+                          <i class="fas fa-water"></i>
+                          <h5>See View</h5>
+                        </div>
+                      </div>
+  
+                    </div>
+                  </div>
+  
+                  <!-- avilable periods  -->
+                  <div class="periods-wrapper">
+  
+  
+                    <div class="periods-container">
+                      <div class="swiper-container" [swiper]="config">
+                        <div class="periods-head">
+                          <div class="head-section">
+                            <h6>Availibility</h6>
+                            <div class="pagination-container">
+                              <b>( </b>
+                              <div class="swiper-pagination-fraction"></div> <b> )</b>
+                            </div>
+                          </div>
+      
+                          <div class="actions">
+                            <button class="btn btn-secondary btn-slider-prev mx-3">
+                              <i class="fas fa-chevron-left me-2"></i>
+                              <span>Prev</span>
+                            </button>
+                            <button class="btn btn-secondary btn-slider-next">
+                              <span>Next</span>
+                              <i class="fas fa-chevron-right ms-2"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <!-- [attr.checked]="building==0 && period==0" -->
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide" *ngFor="let periodItem of unitItem.pricings ; let period = index">
+                            <div class="custom-input-card">
+                              <input class="custom-input" type="radio" [value]="periodItem.id"
+                                id="unitCardPeriod{{periodItem.id}}" formControlName="unitPeriods" />
+                              <label class="custom-input-label" for="unitCardPeriod{{periodItem.id}}">
+                                <div class="period-card">
+                                  <div class="card-flex">
+                                    <div class="period-card-data">
+                                      <div>
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Check-in</span>
+                                      </div>
+                                      <p>{{periodItem.period.start_date}}</p>
+                                    </div>
+  
+                                    <div class="period-card-data">
+                                      <div>
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Check-out</span>
+                                      </div>
+                                      <p>{{periodItem.period.end_date}}</p>
+                                    </div>
+                                  </div>
+                                  <div class="period-price">
+                                    <h5>{{periodItem.period_price}}</h5>
+                                    <span>LE</span>
+                                  </div>
+  
+                                  <div class="period-card-active">
+                                    <i class="fas fa-check-circle"></i>
+                                  </div>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- price features -->
+          <div class="col-12">
+            <!-- price included -->
+            <div class="price-include" *ngIf="priceIncluded.length > 0">
+              <div class="include-icon">
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+              <div class="include-container">
+                <div class="include-head">
+                  <h5>Price include:</h5>
+                </div>
+                <div class="include-body">
+                  <ol class="body-list">
+                    <li class="body-list-item" *ngFor="let item of priceIncluded">
+                      <h6>{{item?.name}}</h6>
+                      <p>{{item?.description}}</p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+  
+            <!-- price not included -->
+            <div class="price-notinclude" *ngIf="priceNotIncluded.length > 0">
+              <div class="include-icon">
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+              <div class="include-container">
+                <div class="include-head">
+                  <h5>Price not include:</h5>
+                </div>
+                <div class="include-body">
+                  <ol class="body-list">
+                    <li class="body-list-item" *ngFor="let item of priceNotIncluded">
+                      <h6>{{item?.name}}</h6>
+                      <p>{{item?.description}}</p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+      <div class="row" *ngIf="destinations?.buildings.length == 0">
+        <div class="col-12">
+          <div class="wrapper-empty">
+            <i class="fas fa-ban"></i>
+            <h6>No Units Founded.</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Reserve Modal -->
+    <div class="modal fade" id="ReserveUnitModal" tabindex="-1" aria-labelledby="ReserveUnitModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <form [formGroup]="reserveTrip">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ReserveUnitModalLabel">Booking Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+  
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group mb-3">
+                    <label class="mb-1" for="fullName">Full Name</label>
+                    <input class="form-control" type="text" formControlName="fullName" id="fullName"
+                      placeholder="Full Name" />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-3">
+                    <label class="mb-1" for="memberId">Member ID</label>
+                    <input class="form-control" type="text" formControlName="memberId" id="memberId"
+                      placeholder="Member Id" />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-3">
+                    <label class="mb-1" for="destination">Destination</label>
+                    <input class="form-control" type="text" formControlName="destination" id="destination"
+                      placeholder="Destination" value="{{destinations?.name}}" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-3">
+                    <label class="mb-1" for="checkInDate">Check-in date</label>
+                    <input class="form-control" type="text" formControlName="checkInDate" id="checkInDate"
+                      value="{{periodPricing?.period.start_date}}" placeholder="Check-in Date" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-3">
+                    <label class="mb-1" for="checkOutDate">Check-out date</label>
+                    <input class="form-control" type="text" formControlName="checkOutDate" id="checkOutDate"
+                      value="{{periodPricing?.period.end_date}}" placeholder="Check-out Date" />
+                  </div>
+                </div>
+  
+                <div class="col-12" *ngIf="priceNotIncluded.length > 0">
+                  <h5 class="border-top pt-4 mt-4">Addons:</h5>
+  
+                  <div class="form-group mb-3" *ngFor="let extraItem of priceNotIncluded">
+                    <div class="row align-items-center">
+                      <div class="col-md-6">
+                        <label for="{{extraItem.name}}">{{extraItem.name}}</label>
+                      </div>
+                      <div class="col-md-6">
+                        <select class="form-select" id="{{extraItem.name}}"
+                          (change)="getExtraFeatures(extraItem , $event)">
+                          <option value="" disabled>choose...</option>
+                          <option value="{{index}}" *ngFor="let index of [0,1,2,3,4]">{{index}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-12">
+                  <div class="row align-items-center">
+                    <div class="form-group mb-3">
+                      <label for="price">Price</label>
+                      <input class="form-control" type="text" formControlName="price" id="price"
+                        value="{{periodPricing?.period_price + finalAddonsPrice}}" placeholder="Price" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" [disabled]="reserveTrip.invalid">Reserve</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  

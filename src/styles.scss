@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+// colors var
+$primary: #0090db;
+$secondary: #ffc107;
+
+body {
+  background-color: #f3f3f5;
+}
+
+main {
+  margin-top: 70px;
+
+  .btn{
+    &:focus , &:active{
+      box-shadow: none !important;
+      outline: none;
+    }
+  }
+
+  input.form-control , select.form-select{
+    &:focus , &:active{
+      box-shadow: none !important;
+      outline: none !important;
+    }
+  }
+}
+
+// section banner
+.section-banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 320px;
+
+  .banner-overlay {
+    padding: 26px 0px;
+    display: flex;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    height: 320px;
+
+    .banner-title {
+      color: #fff;
+      font-weight: 700;
+      font-size: 60px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+// empty content
+.wrapper-empty{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 26px 0px;
+
+  i{
+    font-size: 80px;
+    color: $primary;
+    margin-bottom: 16px;
+  }
+
+  h6{
+    font-size: 26px;
+    color: rgba($color: #000000, $alpha: 0.6);
+    margin-bottom: 0px;
+  }
+}
