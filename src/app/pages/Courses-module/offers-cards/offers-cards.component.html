@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-lg-4 col-md-3 col-sm-6 mb-3" *ngFor="let item of offersList">
+        <a class="card-media" routerLink="">
+            <div class="card-head" style="background-image: url({{item.imageUrl}});"></div>
+            <div class="card-body">
+              <h4 class="title">{{item.title}}</h4>
+              <div class="text-hint"><span class="text-en">31</span> درس</div>
+            </div>
+          </a>
+    </div>
+</div>

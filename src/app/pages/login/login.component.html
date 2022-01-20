@@ -1,0 +1,91 @@
+<section class="login-layout">
+  <div class="login-body">
+    <div class="form-wrapper">
+      <div class="form-container">
+        <!-- logo -->
+        <img src="assets/images/neqabty-logo.png" class="img-fluid" alt="neqabty-logo" />
+
+        <div class="form-title">
+          <h4>تسجيل الدخول</h4>
+        </div>
+      </div>
+
+      <form class="form-content" [formGroup]="loginForm">
+        <!-- alert service error -->
+        <div class="alert alert-danger mb-3 d-none" role="alert">
+          <i class="fas fa-exclamation-triangle mr-2"></i>
+          <span>هناك خطأ</span>
+        </div>
+
+        <!-- username -->
+        <div class="form-group mb-3">
+          <label for="username" class="mb-1">اسم المستخدم</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <img src="assets/images/svg/user.svg" class="img-fluid" alt="user-icon" />
+              </div>
+            </div>
+            <input type="text" class="form-control" formControlName="username" id="username" placeholder="اسم المستخدم" />
+            <!-- error msg -->
+            <div class="invalid-feedback">
+              <div>
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                <span>اسم المستخدم ضرورى</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- password -->
+        <div class="form-group mb-2">
+          <label for="password" class="mb-1">كلمة السر</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <img src="assets/images/svg/password.svg" class="img-fluid" alt="password-icon" />
+              </div>
+            </div>
+            <input type="password" class="form-control" formControlName="password" id="password"
+              placeholder="كلمة السر" />
+            <!-- error msg -->
+            <div class="invalid-feedback">
+              <div>
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                <span>كلمه السر ضرورى</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- forget password -->
+        <div class="content-text">
+          <a routerLink="/forgetPassword">نسيت كلمة السر؟</a>
+        </div>
+
+        <div class="mt-4">
+          <button class="btn btn-primary w-100" type="submit" (click)="login()" [disabled]="!loginForm.valid">دخول</button>
+        </div>
+
+        <!-- create account section -->
+        <div class="create-account-section">
+          <div class="divider-line mb-3">
+            <div class="line"></div>
+            <div class="title">
+              <span>ليس لديك حساب؟</span>
+            </div>
+          </div>
+
+          <a class="btn btn-secondary w-100" routerLink="/createAccount">تسجيل حساب جديد</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="login-bg">
+    <div class="login-content">
+      <h6>نقابتى</h6>
+      <p>نقابتي هو منصة تفاعلية تهدف الي تقديم خدمات الرعاية الصحية لنقابة المهندسين المصرية بطريقة مميكنة مدعمة بوسائل مختلفة للدفع الالكتروني لتسيهل الحصول علي الخدمات ومتابعة مدفوعاتهم باقل وقت ومجهود</p>
+    </div>
+  </div>
+</section>

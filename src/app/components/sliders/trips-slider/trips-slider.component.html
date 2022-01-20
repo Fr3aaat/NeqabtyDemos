@@ -1,0 +1,62 @@
+<section class="section-wrapper trips-wrapper">
+  <div class="container">
+    <div class="swiper-container" [swiper]="config">
+
+      <div class="section-header">
+        <h4 class="section-title">الرحلات</h4>
+
+        <!-- navigation -->
+        <div class="swiper-navigation custom-navigation">
+          <div class="swiper-nav-prev">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="swiper-nav-next">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let item of tripsList">
+          <div class="card-media">
+            <div class="card-head" style="background-image: url({{item.imageUrl}});"></div>
+
+            <div class="card-body pb-0">
+              <h4 class="name">{{item.name}}</h4>
+              <p class="description">{{item.description}}</p>
+
+              <div class="content-box">
+                <div class="content-box-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <h6>{{item.location}}</h6>
+                </div>
+                <div class="content-box-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <h6><span>ملاحظات: </span>{{item.notes}}</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <a class="btn btn-primary w-100" routerLink="">إمكانية الموافرة</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-footer">
+        <!-- pagination -->
+        <div class="swiper-pagination-container mx-auto">
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="footer-action">
+          <a class="btn-link text-primary w-100" routerLink="/trips">
+            <span>المزيد من الرحلات</span>
+            <img src="assets/images/svg/arrow-left.svg" class="img-fluid" alt="arrow" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

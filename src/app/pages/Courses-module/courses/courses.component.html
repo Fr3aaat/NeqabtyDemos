@@ -1,4 +1,18 @@
-<section class="courses-wrapper">
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-lg-3 mb-3">
+            <search-box class="mb-3"></search-box>
+
+            <side-menu [menuList]="courses" [levelList]="level"></side-menu>
+        </div>
+
+        <div class="col-lg-9 mb-3">
+            <offers-cards [offersList]="offers"></offers-cards>
+        </div>
+    </div>
+</div>
+
+<!-- <section class="courses-wrapper">
     <div class="section-banner" style="background-image: url(assets/images/courses-banner.jpg);">
         <div class="banner-overlay">
           <div class="container">
@@ -33,4 +47,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->

@@ -1,0 +1,154 @@
+.section-wrapper {
+  padding: 60px 16px;
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 26px;
+
+    h4 {
+      margin-bottom: 0px;
+    }
+  }
+
+  .section-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 26px;
+    flex-wrap: wrap;
+  }
+}
+
+// advertisements wrapper
+.advertisements-wrapper {
+  .swiper-container {
+    .swiper-navigation {
+      &.basic-navigation {
+        right: 26px;
+        left: 26px;
+      }
+    }
+  }
+
+  .swiper-pagination-container {
+    position: absolute;
+    bottom: 26px;
+    right: 45%;
+  }
+}
+
+// actors wrapper
+.actors-wrapper {
+  background-color: $white;
+  background-image: url("../../../src/assets/images/svg/bg-vectors.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 40px 0px;
+  padding: 60px 26px;
+
+  .section-head {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 40px;
+    text-align: center;
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      font-size: 18px;
+    }
+  }
+
+  .card-basic {
+    border-radius: 50px;
+    padding: 60px 16px;
+    border-color: #C8D2FC;
+    background: rgb(203, 212, 255);
+    background: -moz-linear-gradient(180deg, rgba(203, 212, 255, 1) 0%, rgba(242, 244, 255, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(203, 212, 255, 1) 0%, rgba(242, 244, 255, 1) 100%);
+    background: linear-gradient(180deg, rgba(203, 212, 255, 1) 0%, rgba(242, 244, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cbd4ff", endColorstr="#f2f4ff", GradientType=1);
+  }
+
+  .swiper-container {
+    padding: 0 60px;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        .card-basic {
+          &:nth-child(1n) {
+            border-color: #C8D2FC;
+            background: rgb(203, 212, 255);
+            background: -moz-linear-gradient(180deg, rgba(203, 212, 255, 1) 0%, rgba(242, 244, 255, 1) 100%);
+            background: -webkit-linear-gradient(180deg, rgba(203, 212, 255, 1) 0%, rgba(242, 244, 255, 1) 100%);
+            background: linear-gradient(180deg, rgba(203, 212, 255, 1) 0%, rgba(242, 244, 255, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cbd4ff", endColorstr="#f2f4ff", GradientType=1);
+          }
+        }
+
+        &:nth-child(2n) {
+          .card-basic {
+            border-color: #FFCEFD;
+            background: rgb(255, 206, 253);
+            background: -moz-linear-gradient(180deg, rgba(255, 206, 253, 1) 0%, rgba(252, 237, 255, 1) 100%);
+            background: -webkit-linear-gradient(180deg, rgba(255, 206, 253, 1) 0%, rgba(252, 237, 255, 1) 100%);
+            background: linear-gradient(180deg, rgba(255, 206, 253, 1) 0%, rgba(252, 237, 255, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcefd", endColorstr="#fcedff", GradientType=1);
+          }
+        }
+
+        &:nth-child(3n) {
+          .card-basic {
+            border-color: #FFDCC6;
+            background: rgb(255, 220, 198);
+            background: -moz-linear-gradient(180deg, rgba(255, 220, 198, 1) 0%, rgba(255, 242, 229, 1) 100%);
+            background: -webkit-linear-gradient(180deg, rgba(255, 220, 198, 1) 0%, rgba(255, 242, 229, 1) 100%);
+            background: linear-gradient(180deg, rgba(255, 220, 198, 1) 0%, rgba(255, 242, 229, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffdcc6", endColorstr="#fff2e5", GradientType=1);
+          }
+        }
+
+        &:nth-child(4n) {
+          .card-basic {
+            border-color: #FFF1C6;
+            background: rgb(255, 241, 198);
+            background: -moz-linear-gradient(180deg, rgba(255, 241, 198, 1) 0%, rgba(255, 252, 245, 1) 100%);
+            background: -webkit-linear-gradient(180deg, rgba(255, 241, 198, 1) 0%, rgba(255, 252, 245, 1) 100%);
+            background: linear-gradient(180deg, rgba(255, 241, 198, 1) 0%, rgba(255, 252, 245, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff1c6", endColorstr="#fffcf5", GradientType=1);
+          }
+        }
+      }
+    }
+
+    .swiper-navigation {
+      &.custom-navigation {
+        position: absolute;
+        top: calc(50% - 40px);
+        right: 2px;
+        left: 2px;
+
+        .swiper-nav-prev,
+        .swiper-nav-next {
+          font-size: 16px;
+          padding: 8px 10px;
+          margin-right: 0px;
+        box-shadow: 0px 0px 2px 0px rgba($color: $black, $alpha: 0.2);
+        }
+      }
+    }
+  }
+}
+
+// news section
+.news-wrapper {
+  background-image: url("../../../src/assets/images/bg-grey.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 80px 0px;
+}

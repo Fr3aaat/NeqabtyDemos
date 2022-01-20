@@ -1,0 +1,117 @@
+.footer-wrapper{
+    background-image: url("../../../src/assets/images/footer-bg.png");
+    background-color: #f7f8fd;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 60px 26px;
+    padding-top: 100px;
+
+    .footer-container{
+        h6{
+            color: $white;
+            margin-bottom: 16px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        p{
+            font-size: 16px;
+            color: rgba($color: $white, $alpha: 0.9);
+            margin-bottom: 26px;
+        }
+    }
+
+    .footer-list{
+        h4{
+            font-size: 20px;
+            color: $white;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .nav{
+            flex-direction: column;
+            padding: 0px;
+
+            .nav-item{
+                margin-bottom: 12px;
+
+                .nav-link{
+                    color: rgba($color: $white, $alpha: 0.9);
+                    font-size: 15px;
+                    text-decoration: none;
+                    padding: 0px;
+
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .social-links{
+            display: flex;
+            align-items: center;
+
+            .social-item{
+                background-color: rgba($color: $white, $alpha: 0.9);
+                border-radius: 6px;
+                cursor: pointer;
+                color: #7895fa;
+                width: 28px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                margin-left: 12px;
+                padding: 4px;
+
+                &:hover{
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    .download-links{
+        display: flex;
+        align-items: center;
+
+        .download-link{
+            cursor: pointer;
+            margin-left: 12px;
+
+            &:last-child{
+                margin-bottom: 0px;
+            }
+
+            img{
+                // max-height: 44px;
+            }
+
+            &.disabled{
+                cursor: default;
+            }
+        }
+    }
+
+    .footer-lite{
+        display: flex;
+        align-items: center;
+        border-top: 1px solid $white;
+        padding-top: 14px;
+        margin-top: 16px;
+
+        img{
+            margin-left: 16px;
+            max-height: 22px;
+        }
+
+        h6{
+            margin-bottom: 0px;
+            color: $white;
+            font-size: 14px;
+        }
+    }
+}

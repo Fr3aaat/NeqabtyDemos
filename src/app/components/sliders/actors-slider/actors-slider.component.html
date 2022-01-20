@@ -1,0 +1,27 @@
+<div class="swiper-container" [swiper]="config">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let item of actorsList">
+      <a class="card-basic" routerLink="">
+        <div class="card-logo">
+          <img [src]="item.imageUrl" class="img-fluid" [attr.alt]="item.name" />
+        </div>
+        <p>{{item.name}}</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- navigation -->
+  <div class="swiper-navigation custom-navigation">
+    <div class="swiper-nav-prev">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+    <div class="swiper-nav-next">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+  </div>
+
+  <!-- pagination -->
+  <div class="swiper-pagination-container mt-4">
+    <div class="swiper-pagination"></div>
+  </div>
+</div>

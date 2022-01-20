@@ -1,0 +1,178 @@
+.login-layout {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+
+    &.register-layout{
+        height: auto;
+    }
+
+    // login background
+    .login-bg {
+        min-width: 55%;
+        background: url(/assets/images/login-banner.jpg);
+        background-size: cover !important;
+        background-position: center;
+        background-repeat: no-repeat !important;
+        padding: 16px;
+        border-top-right-radius: 27px;
+        border-bottom-right-radius: 27px;
+
+        .login-content{
+            max-width: 500px;
+            margin: auto;
+            margin-top: 40px;
+            text-align: center;
+            color: $white;
+
+            h6{
+                font-size: 26px;
+                font-weight: 600;
+                margin-bottom: 16px;
+                color: $white;
+            }
+            p{
+                font-size: 15px;
+                color: rgba($color: $white, $alpha: 0.8);
+                max-width: 400px;
+                margin: auto;
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    // login body
+    .login-body {
+        min-width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid $white;
+        background: $white;
+        padding: 16px;
+        padding-top: 26px;
+
+        .form-wrapper{
+            width: 380px;
+            margin: auto;
+
+            .form-container{
+                img{
+                    max-width: 120px;
+                    margin-bottom: 32px;
+                }
+    
+                .form-title{
+                    h4{
+                        font-size: 24px;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                    }
+                    p{
+                        font-size: 15px;
+                        color: rgba($color: $black, $alpha: 0.4);
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+    
+            .form-content{
+                width: 100%;
+                margin-top: 26px;
+            }
+    
+            // content text
+            .content-text{
+                color: $primary;
+                display: flex;
+                justify-content: flex-end;
+                font-size: 15px;
+                cursor: pointer;
+
+                a{
+                    border-bottom: 1px solid $primary;
+                    text-decoration: none;
+                    display: inline-block;
+                    line-height: 16px;
+                    font-size: 14px;
+                }
+            }
+    
+            // create account section
+            .create-account-section{
+                padding-top: 32px;
+            }
+        }
+
+        @media screen and (max-width: $min-lg) {
+        }
+
+        .content-msg{
+            color: rgba($color: $black, $alpha: 0.6);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: $min-lg) {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        height: auto;
+
+        // login background
+        .login-bg {
+            min-width: 100%;
+            padding: 40px;
+            padding-left: 26px;
+
+            .login-content{
+                max-width: 400px;
+                margin: initial;
+                margin-top: 0px;
+                text-align: right;
+
+                h6{
+                    font-size: 26px;
+                    font-weight: 600;
+                    margin-bottom: 16px;
+                }
+                p{
+                    font-size: 16px;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+        // login body
+        .login-body {
+            min-width: 100%;
+            padding: 26px 40px;
+
+            .form-wrapper{
+                width: 400px;
+                margin: auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: $min-sm) {
+        // login background
+        .login-bg {
+            padding-left: 16px;
+        }
+
+        // login body
+        .login-body {
+            padding: 26px 16px;
+
+            .form-wrapper{
+                width: 100%;
+                margin: initial;
+            }
+        }
+    }
+}

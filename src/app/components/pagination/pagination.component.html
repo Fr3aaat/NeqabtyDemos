@@ -1,0 +1,22 @@
+<div class="pagination-wrapper">
+    <!-- previous -->
+    <div class="pagination-prev">
+        <div class="arrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <h6>السابق</h6>
+    </div>
+
+    <!-- number -->
+    <div class="pagination-numbers">
+        <span class="page-number" *ngFor="let item of counter(totalPages) ; let i = index" [class.active]="(i+1) == currentPage" (click)="nextPage($event)">{{i+1}}</span>
+    </div>
+
+    <!-- next -->
+    <div class="pagination-next">
+        <h6>التالى</h6>
+        <div class="arrow">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+    </div>
+</div>

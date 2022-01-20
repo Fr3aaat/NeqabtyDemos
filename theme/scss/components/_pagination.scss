@@ -1,0 +1,76 @@
+.pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .pagination-prev,
+  .pagination-next {
+    margin: 4px 0px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .arrow {
+      border-radius: 4px;
+      padding: 4px 10px;
+      background-color: rgba($color: $black, $alpha: 0.1);
+      color: rgba($color: $black, $alpha: 0.5);
+
+      i {
+        font-size: 14px;
+      }
+    }
+
+    h6 {
+      font-size: 15px;
+      color: rgba($color: $black, $alpha: 0.6);
+      font-weight: 400;
+      margin: 0px 14px;
+    }
+
+    &:hover {
+      .arrow {
+        color: rgba($color: $black, $alpha: 0.6);
+      }
+
+      h6 {
+        color: rgba($color: $black, $alpha: 0.7);
+      }
+    }
+  }
+
+  .pagination-numbers {
+    margin: 4px 0px;
+    display: flex;
+    align-items: center;
+
+    .page-number {
+      padding: 2px 6px;
+      font-size: 14px;
+      color: rgba($color: $black, $alpha: 0.5);
+      cursor: pointer;
+      border-radius: 4px;
+      margin-left: 10px;
+      font-family: "AvantGardeBook";
+
+      &:last-child {
+        margin-left: 0px;
+      }
+
+      &:hover {
+        color: rgba($color: $black, $alpha: 0.7);
+      }
+
+      &.active {
+        background-color: $primary;
+        color: $white;
+
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+    }
+  }
+}

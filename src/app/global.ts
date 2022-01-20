@@ -9,4 +9,7 @@ export class Global {
         "password": "pbkdf2_sha256$150000$DHY5JxNahHlQ$oYwak3WcSB8/jdh49xt+kAtxq+rux07dgu2xdgb/78o=",
         "mobile": "+201006542365"
     }
+
+    userLogged = true;  // check if user guest or logged in
+    userView = true;    // check if user login or website view
 }

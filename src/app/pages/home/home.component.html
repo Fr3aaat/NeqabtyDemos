@@ -1,8 +1,34 @@
-<section class="home-banner">
-    <div class="banner-overlay">
-        <div class="container">
-            <img src="../../../assets/images/neqabty-logo.png" class="img-fluid" alt="logo" />
-            <h2>Neqabty Demos.</h2>
-        </div>
-    </div>
+<!-- advertisements wrapper -->
+<section class="advertisements-wrapper">
+  <!-- advertisements slider -->
+  <advertisements-slider [advertisementsList]="advertisements"></advertisements-slider>
 </section>
+
+<!-- actors section -->
+<section class="section-wrapper actors-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="section-head">
+        <h4 class="section-title">
+          <span class="text-secondary">الجهات </span> <span class="text-primary">الرئيسية</span>
+        </h4>
+    
+        <p class="section-description">نقابتي هو منصة تفاعلية تهدف الي تقديم خدمات الرعاية الصحية لنقابة المهندسين المصرية
+          بطريقة مميكنة مدعمة بوسائل مختلفة للدفع الالكتروني لتسيهل الحصول علي الخدمات ومتابعة مدفوعاتهم باقل وقت ومجهود
+        </p>
+      </div>
+    
+      <!-- actors slider -->
+      <actors-slider [actorsList]="actors"></actors-slider>
+    </div>
+  </div>
+</section>
+
+<!-- news section -->
+<news-slider [newsList]="news"></news-slider>
+
+<!-- courses section -->
+<!-- <courses-slider [coursesList]="courses" *ngIf="userLogged"></courses-slider> -->
+
+<!-- trips section -->
+<!-- <trips-slider [tripsList]="trips" *ngIf="userLogged"></trips-slider> -->

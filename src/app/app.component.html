@@ -1,5 +1,10 @@
-<header></header>
+<!-- header for all users -->
+<header-global *ngIf="!userLogged && userView"></header-global>
+<!-- header after user log in -->
+<header *ngIf="userLogged && userView"></header>
+
 <main>
   <router-outlet></router-outlet>
 </main>
-<footer></footer>
+
+<footer *ngIf="userView"></footer>

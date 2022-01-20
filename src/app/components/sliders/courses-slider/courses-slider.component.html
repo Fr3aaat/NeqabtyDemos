@@ -1,0 +1,46 @@
+<section class="section-wrapper courses-wrapper">
+  <div class="container">
+    <div class="swiper-container" [swiper]="config">
+
+      <div class="section-header">
+        <h4 class="section-title">الدورات التعليمية</h4>
+
+        <!-- navigation -->
+        <div class="swiper-navigation custom-navigation">
+          <div class="swiper-nav-prev">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="swiper-nav-next">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let item of coursesList">
+          <a class="card-media" routerLink="">
+            <div class="card-head" style="background-image: url({{item.imageUrl}});"></div>
+            <div class="card-body">
+              <h4 class="title">{{item.title}}</h4>
+              <div class="text-hint"><span class="text-en">31</span> درس</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="section-footer">
+        <!-- pagination -->
+        <div class="swiper-pagination-container mx-auto">
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="footer-action">
+          <a class="btn-link text-primary w-100" routerLink="/courses">
+            <span>المزيد من الدورات التعليمية</span>
+            <img src="assets/images/svg/arrow-left.svg" class="img-fluid" alt="arrow" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

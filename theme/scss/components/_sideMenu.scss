@@ -1,0 +1,73 @@
+.side-menu {
+  border: 1px solid rgba($color: $black, $alpha: 0.1);
+  border-radius: 6px;
+
+  .side-head {
+    padding: 20px 16px;
+    border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+    font-weight: 600;
+    font-size: 16px;
+    color: $black;
+  }
+
+  .side-container {
+    .accordion {
+      .accordion-item {
+        border: 0px;
+        border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+
+        &:last-child {
+          border-bottom: 0px;
+        }
+
+        .accordion-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          padding: 16px;
+
+          h4 {
+            font-size: 14px;
+            color: rgba($color: $black, $alpha: 0.5);
+            font-weight: 600;
+            margin-bottom: 0px;
+          }
+
+          .arrow {
+            i {
+              color: rgba($color: $black, $alpha: 0.5);
+              font-size: 15px;
+            }
+          }
+
+          &.collapsed {
+            .arrow {
+              i {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+
+        .accordion-collapse {
+          .accordion-body {
+            padding-top: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.search-box{
+    border: 1px solid rgba($color: $black, $alpha: 0.1);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    padding: 16px;
+
+    h6{
+        font-weight: 600;
+        font-size: 16px;
+    }
+}

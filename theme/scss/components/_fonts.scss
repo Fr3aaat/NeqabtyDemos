@@ -1,0 +1,25 @@
+/*****************************************
+********* Fonts Start
+*****************************************/
+
+@font-face {
+    font-family: 'AvantGardeBook';
+    src: url('/assets/fonts/AvantGardeITCbyBT-Book.eot');
+    src: url('/assets/fonts/AvantGardeITCbyBT-Book.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/AvantGardeITCbyBT-Book.woff') format('woff'),
+        url('/assets/fonts/AvantGardeITCbyBT-Book.ttf') format('truetype'),
+        url('/assets/fonts/AvantGardeITCbyBT-Book.svg#AvantGardeITCbyBT-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DroidKufi';
+    src: url('/assets/fonts/DroidKufi-Regular.eot');
+    src: url('/assets/fonts/DroidKufi-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/DroidKufi-Regular.woff') format('woff'),
+        url('/assets/fonts/DroidKufi-Regular.ttf') format('truetype'),
+        url('/assets/fonts/DroidKufi-Regular.svg#DroidKufi-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

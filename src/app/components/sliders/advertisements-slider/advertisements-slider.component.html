@@ -1,0 +1,24 @@
+<div class="swiper-container" [swiper]="config">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let item of advertisementsList">
+      <a class="card-banner" [href]="item.link" target="_blank">
+        <img [src]="item.imageUrl" class="img-fluid" />
+      </a>
+    </div>
+  </div>
+
+  <!-- navigation -->
+  <div class="swiper-navigation basic-navigation">
+    <div class="swiper-nav-prev">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+    <div class="swiper-nav-next">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+  </div>
+
+  <!-- pagination -->
+  <div class="swiper-pagination-container mx-auto">
+    <div class="swiper-pagination"></div>
+  </div>
+</div>

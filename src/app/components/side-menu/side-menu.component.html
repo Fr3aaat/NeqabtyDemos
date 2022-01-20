@@ -1,0 +1,51 @@
+<aside class="side-menu">
+  <div class="side-head">التصفية</div>
+
+  <div class="side-container">
+    <div class="accordion" id="sideMenuAccordion">
+        <div class="accordion-item" *ngIf="menuList">
+          <div class="accordion-header" (click)="collapseItems($event)" id="headingOne" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <h4>الدورات التعليمية</h4>
+              <div class="arrow">
+                <i class="fas fa-chevron-up"></i>
+              </div>
+          </div>
+
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#sideMenuAccordion">
+            <div class="accordion-body me-3">
+                <form>
+                    <div class="form-check" *ngFor="let menuItem of menuList">
+                        <input class="form-check-input" type="checkbox" name="mainFeature" [attr.id]="menuItem.id">
+                        <label class="form-check-label" [attr.for]="menuItem.id">
+                          {{menuItem.name}}
+                        </label>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item" *ngIf="levelList">
+          <div class="accordion-header" (click)="collapseItems($event)" id="headingTwo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <h4>المستوى</h4>
+            <div class="arrow">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+          </div>
+
+          <div id="collapseTwo" class="accordion-collapse" aria-labelledby="headingTwo" data-bs-parent="#sideMenuAccordion">
+            <div class="accordion-body me-3">
+              <form>
+                <div class="form-check" *ngFor="let item of levelList">
+                    <input class="form-check-input" type="checkbox" name="secondaryFeature" [attr.id]="item.id">
+                    <label class="form-check-label" [attr.for]="item.id">
+                      {{item.name}}
+                    </label>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</aside>

@@ -1,0 +1,69 @@
+<section class="login-layout register-layout">
+  <div class="login-body">
+    <div class="form-wrapper">
+      <div class="form-container">
+        <!-- logo -->
+        <img src="assets/images/neqabty-logo.png" class="img-fluid" alt="neqabty-logo" />
+
+        <div class="form-title">
+          <h4>تسجيل الإشتراك</h4>
+        </div>
+      </div>
+
+      <form class="form-content" [formGroup]="registerForm">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label for="userName">الاسم</label>
+              <input type="text" class="form-control" formControlName="userName" id="userName"
+                placeholder="اسم المستخدم" />
+            </div>
+          </div>
+          
+          <div class="col-12">
+            <div class="form-group">
+              <label for="nationalNumber">الرقم القومى</label>
+              <input type="number" class="form-control" formControlName="nationalNumber" id="nationalNumber"
+                placeholder="الرقم القومى" />
+            </div>
+          </div>
+          
+          <div class="col-12">
+            <div class="form-group">
+              <label for="membershipNumber">رقم العضوية</label>
+              <input type="number" class="form-control" formControlName="membershipNumber" id="membershipNumber" placeholder="xxx-xxx-xxx" />
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-group">
+              <label for="registrationNumber">رقم التسجيل</label>
+              <input type="number" class="form-control" formControlName="registrationNumber" id="registrationNumber" placeholder="xxx-xxx-xxx" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="subscriptionYear">سنه الإشتراك</label>
+              <input type="number" class="form-control" formControlName="subscriptionYear" id="subscriptionYear" placeholder="2018" />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <button class="btn btn-primary w-100" type="button" [disabled]="!registerForm.valid">تسجيل الإشتراك</button>
+        </div>
+
+        <div class="content-msg">
+            بالفعل لدى حساب؟ <a class="btn-link text-primary me-2" routerLink="/login">تسجيل الدخول</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="login-bg">
+    <div class="login-content">
+        <h6>نقابتى</h6>
+        <p>نقابتي هو منصة تفاعلية تهدف الي تقديم خدمات الرعاية الصحية لنقابة المهندسين المصرية بطريقة مميكنة مدعمة بوسائل مختلفة للدفع الالكتروني لتسيهل الحصول علي الخدمات ومتابعة مدفوعاتهم باقل وقت ومجهود</p>
+      </div>
+  </div>
+</section>
