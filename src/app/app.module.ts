@@ -45,6 +45,8 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 import { TripsComponent } from './pages/trips-module/trips/trips.component';
 import { TripsCardsComponent } from './pages/trips-module/trips-cards/trips-cards.component';
 import { OffersCardsComponent } from './pages/Courses-module/offers-cards/offers-cards.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { TopNewsComponent } from './components/sliders/top-news/top-news.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -81,6 +83,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     TripsComponent,
     TripsCardsComponent,
     OffersCardsComponent,
+    BreadcrumbComponent,
+    TopNewsComponent,
   ],
   imports: [
     BrowserModule,

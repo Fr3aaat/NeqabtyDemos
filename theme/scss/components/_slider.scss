@@ -60,7 +60,7 @@
   // pagination
   .swiper-pagination-container {
     .swiper-pagination {
-        position: relative;
+      position: relative;
 
       .swiper-pagination-bullet {
         width: 26px;
@@ -70,13 +70,27 @@
         opacity: 1;
         border-radius: 4px;
 
-        &:last-child{
-            margin-left: 0px;
+        &:last-child {
+          margin-left: 0px;
         }
 
         &.swiper-pagination-bullet-active {
           background: $third;
           width: 44px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $min-sm) {
+    // navigation
+    .swiper-navigation {
+      &.basic-navigation {
+        top: calc(50% - 26px);
+
+        .swiper-nav-prev,
+        .swiper-nav-next {
+          font-size: 26px;
         }
       }
     }

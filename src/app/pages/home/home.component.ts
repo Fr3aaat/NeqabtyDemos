@@ -15,8 +15,7 @@ export class HomeComponent implements OnInit {
   [
     {
       id: 1,
-      imageUrl: "https://via.placeholder.com/1920x840",
-
+      imageUrl: "assets/images/home-banner.jpg",
       link: "https://www.google.com.eg/"
     },
     {

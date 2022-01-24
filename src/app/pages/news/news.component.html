@@ -1,4 +1,83 @@
-<div class="container">
-  <news-slider></news-slider>
-  <pagination [totalPages]="totalPagesNumber"></pagination>
+<div class="news-page">
+  <div class="news-banner mb-5">
+    <div class="container-fluid mb-3">
+      <div class="row">
+        <top-news [topNewsList]="news"></top-news>
+      </div>
+    </div>
+
+    <breadcrumb></breadcrumb>
+  </div>
+
+  <div class="container mb-5">
+    <div class="row">
+      <div class="news-container">
+        <form [formGroup]="filterNewsForm">
+          <div class="row">
+            <div class="col-lg-6 col-md-9">
+              <div class="row">
+                <div class="col-sm-8">
+                  <div class="input-search my-1">
+                    <div class="search-icon">
+                      <img src="assets/images/svg/search-dark.svg" class="img-fluid" alt="search-icon" />
+                    </div>
+                    <input type="text" class="form-control" formControlName="search" id="search" placeholder="بحث">
+                  </div>
+                </div>
+
+                <div class="col-sm-4 d-flex justify-content-md-start justify-content-end">
+                  <button class="btn btn-outline-primary my-1" type="button" (click)="showFilterItems()">
+                    <i class="fas fa-filter ms-2"></i>
+                    <span>تصفية</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4" *ngIf="filterInputs">
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                    <label class="fw-bold">النقابة</label>
+                    <select class="form-select" formControlName="actorFilter">
+                      <option value="" selected>اختر</option>
+                      <option value="option1">نقابة المهندسين</option>
+                      <option value="option2">نقابة المعلمين</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                    <label class="fw-bold">التاريخ</label>
+                    <div class="d-flex align-items-center">
+                      <input type="date" class="form-control text-en" formControlName="startDate" />
+                      <div class="fa-26 fw-bold mx-3">-</div>
+                      <input type="date" class="form-control text-en" formControlName="endDate" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="row mt-4">
+          <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of news">
+            <a class="card-media" routerLink="/news/1">
+              <div class="card-head" style="background-image: url({{item.imageUrl}});"></div>
+              <div class="card-body">
+                <h4 class="title">{{item.title|slice:0:120}}</h4>
+                <p class="date">{{item.date}}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <pagination class="mt-3" [totalPages]="totalPagesNumber"></pagination>
+    </div>
+  </div>
 </div>

@@ -10,6 +10,9 @@ nav.navbar {
   .navbar-brand {
     padding: 0px;
     margin: 0px;
+    margin-left: auto;
+    border-left: 2px solid rgba($color: $black, $alpha: 0.1);
+    padding-left: 26px;
 
     img {
       max-height: 55px;
@@ -18,19 +21,20 @@ nav.navbar {
 
   .navbar-nav {
     .nav-item {
-        margin-left: 16px;
-        padding: 9px 0;
+      margin-left: 16px;
+      padding: 9px 0;
 
-        &:last-child{
-            margin-left: 0px;
-        }
+      &:last-child {
+        margin-left: 0px;
+      }
 
       .nav-link {
-        color: rgba($color: $black, $alpha: 0.7);
-        font-size: 14px;
+        color: rgba($color: $black, $alpha: 0.6);
+        font-size: 16px;
 
         &.active {
           color: $primary;
+          font-family: "DinnNext-Medium";
         }
       }
 
@@ -38,7 +42,7 @@ nav.navbar {
         .nav-link {
           &.dropdown-toggle {
             display: flex;
-            align-items: center;
+            align-items: flex-end;
 
             &::after {
               border: 0px;
@@ -68,28 +72,28 @@ nav.navbar {
     box-shadow: 0px 3px 12px rgba($black, 0.08);
     padding: 0;
 
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 25%;
-      width: 0px;
-      height: 0px;
-      border-style: solid;
-    }
+    // &::before,
+    // &::after {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   left: 25%;
+    //   width: 0px;
+    //   height: 0px;
+    //   border-style: solid;
+    // }
 
-    &::after {
-      top: -15px;
-      border-color: transparent transparent $white transparent;
-      border-width: 8px;
-    }
+    // &::after {
+    //   top: -15px;
+    //   border-color: transparent transparent $white transparent;
+    //   border-width: 8px;
+    // }
 
-    &::before {
-      top: -16px;
-      border-color: transparent transparent rgba($black, $alpha: 0.1) transparent;
-      border-width: 8px;
-    }
+    // &::before {
+    //   top: -16px;
+    //   border-color: transparent transparent rgba($black, $alpha: 0.1) transparent;
+    //   border-width: 8px;
+    // }
 
     li {
       border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
@@ -100,7 +104,7 @@ nav.navbar {
 
       .dropdown-item {
         text-align: right;
-        font-size: 14px;
+        font-size: 16px;
         color: rgba($color: $black, $alpha: 0.7);
         padding: 10px 16px;
 
@@ -145,8 +149,13 @@ nav.navbar {
             margin-left: 10px;
           }
 
+          img {
+            max-height: 22px;
+            margin-left: 6px;
+          }
+
           span {
-            font-size: 13px;
+            font-size: 14px;
             color: $primary;
           }
         }
@@ -158,11 +167,88 @@ nav.navbar {
         }
 
         &.show {
-            .arrow {
-                transform: rotate(180deg);
-            }
+          .arrow {
+            transform: rotate(180deg);
+          }
         }
       }
     }
+  }
+
+  @media screen and (max-width: $min-lg) {
+    padding: 10px;
+
+    .navbar-brand {
+      border-right: 2px solid rgba($color: $black, $alpha: 0.1);
+      border-left: 0px;
+      padding-right: 16px;
+      padding-left: 0px;
+
+      img {
+        max-height: 32px;
+      }
+    }
+
+    .navbar-nav {
+      padding: 16px 26px;
+
+      .nav-item {
+        margin-left: 0px;
+        padding: 4px 0;
+      }
+    }
+
+    .dropdown-menu {
+      box-shadow: none;
+    }
+
+    .navbar-toggler {
+      padding: 0;
+      border: 0;
+      padding-left: 16px;
+      color: rgba($color: $black, $alpha: 0.5);
+
+      &:focus,
+      &:active {
+        box-shadow: none;
+        outline: 0px;
+      }
+    }
+
+    .navbar-collapse {
+      position: absolute;
+      top: 56px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      background: $white;
+      border-top: 1px solid rgba($color: $black, $alpha: 0.1);
+      height: 100vh;
+
+      .navbar-nav {
+        background: $white;
+        height: 100%;
+      }
+    }
+
+    .user-action {
+      &.dropdown {
+        .dropdown-toggle {
+          .user-avatar {
+            img {
+              margin-left: 4px;
+            }
+  
+            span {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $min-sm) {
+    padding: 10px 0px;
   }
 }

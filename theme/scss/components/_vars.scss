@@ -7,13 +7,14 @@ $white: #ffffff;
 $light: #f3f3f5;
 
 $success: #29a32c;
+$danger: #dc3545;
 $error: #ff0000;
 
 // media query
 $min-xs: 380px;
 $min-sm: 576px;
-$min-md: 768px;
-$min-lg: 992px;
+$min-md: 767px;
+$min-lg: 991px;
 $min-xl: 1200px;
 
 $theme-colors: (
@@ -24,5 +25,6 @@ $theme-colors: (
   "black": $black,
   "light": $light,
   "success": $success,
-  "error": $error
+  "danger": $danger,
+  "error": $error,
 );

@@ -1,0 +1,56 @@
+.breadcrumb-wrapper {
+  .breadcrumb-container {
+    .nav {
+      padding: 0px;
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+
+        .nav-link {
+          font-size: 18px;
+          color: rgba($color: $black, $alpha: 0.5);
+          padding: 0px;
+          font-weight: 600;
+        }
+
+        &.active {
+          .nav-link {
+            color: $primary;
+          }
+        }
+
+        &::after {
+          content: "/";
+          display: inline-block;
+          color: $primary;
+          font-size: 26px;
+          margin: 0px 6px;
+          font-weight: 600;
+        }
+
+        &:last-child {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $min-sm) {
+    .breadcrumb-container {
+      .nav {
+        .nav-item {
+          .nav-link {
+            font-size: 16px;
+          }
+
+          &::after {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}

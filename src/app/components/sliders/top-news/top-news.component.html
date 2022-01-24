@@ -1,0 +1,29 @@
+<div class="swiper-container" [swiper]="config">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let item of topNewsList">
+      <a class="card-banner" routerLink="" style="background-image: url({{item.imageUrl}});">
+          <div class="full-overlay">
+              <div class="overlay-content">
+                <h5>{{item.title|slice:0:140}}</h5>
+                <p>{{item.date}}</p>
+              </div>
+          </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- navigation -->
+  <div class="swiper-navigation basic-navigation">
+    <div class="swiper-nav-prev">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+    <div class="swiper-nav-next">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+  </div>
+
+  <!-- pagination -->
+  <div class="swiper-pagination-container mt-4">
+    <div class="swiper-pagination"></div>
+  </div>
+</div>

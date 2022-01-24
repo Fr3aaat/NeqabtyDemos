@@ -4,6 +4,15 @@
   align-items: center;
   padding: 8px 16px;
   font-size: 14px;
+  border-radius: 8px;
+
+  span{
+    font-size: 16px;
+  }
+
+  i{
+    font-size: 14px;
+  }
 
   &:focus,
   &:active {
@@ -22,6 +31,12 @@
       color: $white;
     }
   }
+
+  &.btn-outline-primary{
+    &:hover{
+      color: $white;
+    }
+  }
 }
 
 .btn-link {
@@ -30,8 +45,8 @@
   text-decoration: none !important;
 
   span{
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 18px;
+    font-family: 'DinnNext-Medium';
   }
 
   i {
@@ -40,5 +55,6 @@
 
   img{
     margin-right: 18px;
+    margin-top: 6px;
   }
 }

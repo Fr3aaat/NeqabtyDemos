@@ -1,74 +1,89 @@
 .pagination-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  text-align: center;
 
-  .pagination-prev,
-  .pagination-next {
-    margin: 4px 0px;
-    display: flex;
+  .pagination-container {
+    display: inline-flex;
     align-items: center;
-    cursor: pointer;
+    justify-content: center;
+    border: 1px solid rgba($color: $black, $alpha: 0.1);
+    border-radius: 6px;
+    padding: 6px 0px;
+    flex-wrap: wrap;
 
-    .arrow {
-      border-radius: 4px;
-      padding: 4px 10px;
-      background-color: rgba($color: $black, $alpha: 0.1);
-      color: rgba($color: $black, $alpha: 0.5);
+    .pagination-prev,
+    .pagination-next {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 4px 12px;
 
-      i {
-        font-size: 14px;
-      }
-    }
-
-    h6 {
-      font-size: 15px;
-      color: rgba($color: $black, $alpha: 0.6);
-      font-weight: 400;
-      margin: 0px 14px;
-    }
-
-    &:hover {
       .arrow {
-        color: rgba($color: $black, $alpha: 0.6);
+        color: $primary;
+        margin: 0px 4px;
+        display: flex;
+
+        i {
+          font-size: 12px;
+        }
       }
 
       h6 {
-        color: rgba($color: $black, $alpha: 0.7);
+        font-size: 13px;
+        color: $primary;
+        font-weight: 400;
+        margin: 0px 4px;
+      }
+
+      &:disabled,
+      &.disabled {
+        cursor: default;
+
+        .arrow {
+          color: rgba($color: $black, $alpha: 0.6);
+        }
+
+        h6 {
+          color: rgba($color: $black, $alpha: 0.6);
+        }
       }
     }
-  }
 
-  .pagination-numbers {
-    margin: 4px 0px;
-    display: flex;
-    align-items: center;
+    .pagination-prev {
+      border-left: 2px solid rgba($color: $black, $alpha: 0.1);
+      margin-left: 14px;
+    }
 
-    .page-number {
-      padding: 2px 6px;
-      font-size: 14px;
-      color: rgba($color: $black, $alpha: 0.5);
-      cursor: pointer;
-      border-radius: 4px;
-      margin-left: 10px;
-      font-family: "AvantGardeBook";
+    .pagination-next {
+      border-right: 2px solid rgba($color: $black, $alpha: 0.1);
+      margin-right: auto;
+    }
 
-      &:last-child {
-        margin-left: 0px;
-      }
+    .pagination-numbers {
+      margin: 0px 4px;
+      display: flex;
+      align-items: center;
 
-      &:hover {
+      .page-number {
+        padding: 4px 10px;
+        margin-left: 8px;
+        font-size: 14px;
         color: rgba($color: $black, $alpha: 0.7);
-      }
-
-      &.active {
-        background-color: $primary;
-        color: $white;
+        cursor: pointer;
+        border-radius: 4px;
+        font-family: "AvantGardeBook";
 
         &:hover {
+          color: rgba($color: $black, $alpha: 0.9);
+        }
+
+        &.active {
           background-color: $primary;
           color: $white;
+
+          &:hover {
+            background-color: $primary;
+            color: $white;
+          }
         }
       }
     }

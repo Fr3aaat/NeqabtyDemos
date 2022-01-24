@@ -138,7 +138,7 @@
           font-size: 16px;
           padding: 8px 10px;
           margin-right: 0px;
-        box-shadow: 0px 0px 2px 0px rgba($color: $black, $alpha: 0.2);
+          box-shadow: 0px 0px 2px 0px rgba($color: $black, $alpha: 0.2);
         }
       }
     }
@@ -151,4 +151,46 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 80px 0px;
+}
+
+@media screen and (max-width: $min-md) {
+  // advertisements wrapper
+  .advertisements-wrapper {
+    .swiper-container {
+      .swiper-navigation {
+        &.basic-navigation {
+          right: 8px;
+          left: 8px;
+        }
+      }
+    }
+
+    .swiper-pagination-container {
+      bottom: 12px;
+    }
+  }
+
+  // actors wrapper
+  .actors-wrapper {
+    margin: 20px 0px;
+    padding: 16px 0px;
+    background-size: contain;
+
+    .section-head {
+      margin-bottom: 32px;
+
+      .section-title {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+
+      .section-description {
+        font-size: 15px;
+      }
+    }
+
+    .card-basic {
+      padding: 40px 16px;
+    }
+  }
 }
