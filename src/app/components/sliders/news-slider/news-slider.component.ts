@@ -29,7 +29,7 @@ export class NewsSliderComponent implements OnInit {
       clickable: true
     },
     breakpoints: {
-      991: {
+      576: {
         slidesPerView: 2
       },
       1200: {

@@ -1,9 +1,9 @@
-.btn {
+button.btn , a.btn {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px 16px;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 8px;
 
   span{

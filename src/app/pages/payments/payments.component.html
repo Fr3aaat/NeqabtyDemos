@@ -1,1 +1,157 @@
-<p>payments works!</p>
+<div class="payments-page">
+  <div class="container-title">
+    <breadcrumb [breadcrumb]="breadcrumb"></breadcrumb>
+  </div>
+
+  <div class="container">
+    <div class="banner-vector">
+      <img src="assets/images/svg/payment.svg" class="img-fluid" alt="payment-vector" />
+    </div>
+
+    <div class="stepper-wrapper">
+      <!-- stepper head -->
+      <div class="stepper-head mx-lg-5 mb-lg-5">
+        <div class="step-item" [class.active]="secondStep || thirdStep || lastStep">
+          <div class="state">١</div>
+          <span>الخطوة الأولى</span>
+        </div>
+        <div class="step-item" [class.active]="thirdStep || lastStep">
+          <div class="state">٢</div>
+          <span>الخطوة الثانية</span>
+        </div>
+        <div class="step-item" [class.active]="lastStep">
+          <div class="state">٣</div>
+          <span>الخطوة الثالثة</span>
+        </div>
+
+        <div class="stepper-line"></div>
+      </div>
+
+      <div class="stepper-container">
+        <div class="card-box" *ngIf="firstStep">
+          <div class="card-box-head">
+            <h4 class="head-title">المدفوعات</h4>
+          </div>
+
+          <form [formGroup]="firstStepForm">
+            <div class="card-box-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>الموبايل</label>
+                    <input type="number" class="form-control" formControlName="mobileNumber" placeholder="اكتب..." />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>البريد الإلكترونى</label>
+                    <input type="email" class="form-control" formControlName="email" placeholder="اكتب..." />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>وسيلة الدفع</label>
+                    <select class="form-select" formControlName="paymentMethod">
+                      <option value="" selected>اختر...</option>
+                      <option value="option1">فورى</option>
+                      <option value="option2">كاش</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-box-footer">
+              <button class="btn btn-primary px-5" type="button" (click)="nextStep(2)"
+                [disabled]="firstStepForm.invalid">التالى</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-box" *ngIf="secondStep">
+          <div class="card-box-head">
+            <h4 class="head-title">المدفوعات</h4>
+          </div>
+
+          <form [formGroup]="secondStepForm">
+            <div class="card-box-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>رقم البطاقة</label>
+                    <input type="number" class="form-control" formControlName="nationalNumber" placeholder="اكتب..." />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>بطاقة بنكية</label>
+                    <input type="email" class="form-control" formControlName="bankCardNumber" placeholder="اكتب..." />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>وسيلة الدفع</label>
+                    <select class="form-select" formControlName="paymentMethod">
+                      <option value="" selected>...اختر</option>
+                      <option value="option1">فورى</option>
+                      <option value="option2">كاش</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-box-footer">
+              <button class="btn btn-primary px-5" type="button" (click)="nextStep(3)"
+                [disabled]="secondStepForm.invalid">التالى</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-box" *ngIf="thirdStep">
+          <div class="card-box-head">
+            <h4 class="head-title">المدفوعات</h4>
+          </div>
+
+          <form [formGroup]="thirdStepForm">
+            <div class="card-box-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>رقم البطاقة</label>
+                    <input type="number" class="form-control" formControlName="nationalNumber" placeholder="اكتب..." />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>بطاقة بنكية</label>
+                    <input type="email" class="form-control" formControlName="bankCardNumber" placeholder="اكتب..." />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-box-footer">
+              <button class="btn btn-primary px-5" type="button" (click)="nextStep('last')"
+                [disabled]="thirdStepForm.invalid">تأكيد الدفع</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-box" *ngIf="lastStep">
+          <div class="card-box-head">
+            <h4 class="head-title">رساله</h4>
+          </div>
+
+          <div class="card-box-body">
+            <div class="row">
+              <div class="col-12">
+                <h4>تم الدفع</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

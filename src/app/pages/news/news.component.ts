@@ -10,6 +10,19 @@ export class NewsComponent implements OnInit {
 
   filterInputs = false;
 
+  breadcrumb = [
+    {
+      id: 1,
+      title: "الرئيسية",
+      route: "/home"
+    },
+    {
+      id: 2,
+      title: "الأخبار",
+      route: "/news"
+    }
+  ]
+
   filterNewsForm = new FormGroup({
     search : new FormControl(''),
     actorFilter : new FormControl(''),

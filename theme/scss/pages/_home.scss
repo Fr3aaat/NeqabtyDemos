@@ -33,9 +33,9 @@
   }
 
   .swiper-pagination-container {
-    position: absolute;
-    bottom: 26px;
-    right: 45%;
+    position: relative;
+    bottom: 50px;
+    right: 0px;
   }
 }
 
@@ -79,6 +79,8 @@
     padding: 0 60px;
 
     .swiper-wrapper {
+      margin-bottom: 40px;
+
       .swiper-slide {
         .card-basic {
           &:nth-child(1n) {
@@ -142,6 +144,17 @@
         }
       }
     }
+
+    .swiper-pagination-container{
+      position: absolute;
+      bottom: -6px;
+      right: 0;
+      left: 0;
+
+      .swiper-pagination{
+        bottom: 6px;
+      }
+    }
   }
 }
 
@@ -166,7 +179,7 @@
     }
 
     .swiper-pagination-container {
-      bottom: 12px;
+      bottom: 26px;
     }
   }
 

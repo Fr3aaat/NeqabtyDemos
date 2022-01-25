@@ -18,6 +18,24 @@ export class NewsInnerComponent implements OnInit {
     newsName: "المصرى اليوم"
   }; 
 
+  breadcrumb = [
+    {
+      id: 1,
+      title: "الرئيسية",
+      route: "/home"
+    },
+    {
+      id: 2,
+      title: "الأخبار",
+      route: "/news"
+    },
+    {
+      id: 3,
+      title: "تفاصيل الخبر",
+      route: "/news/1"
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

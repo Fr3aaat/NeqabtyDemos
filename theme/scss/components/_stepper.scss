@@ -1,0 +1,110 @@
+.stepper-wrapper {
+  .stepper-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 26px;
+
+    .step-item {
+      background-color: $white;
+      padding: 8px 26px;
+      display: flex;
+      align-items: center;
+      z-index: 5;
+
+      .state {
+        border-radius: 50%;
+        border: 1px solid rgba($color: $black, $alpha: 0.4);
+        color: rgba($color: $black, $alpha: 0.4);
+        margin-left: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 4px;
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+      }
+
+      span {
+        font-size: 14px;
+        color: rgba($color: $black, $alpha: 0.5);
+        line-height: 14px;
+      }
+
+      &.active {
+        .state {
+          border: 1px solid $success;
+          background-color: $success;
+          color: $success;
+          font-size: 0px;
+          padding-bottom: 0px;
+
+          &::after {
+            font-family: "Font Awesome 5 Free";
+            content: "\f00c";
+            display: inline-block;
+            font-weight: 900;
+            color: $white;
+            font-size: 16px;
+          }
+        }
+
+        span {
+          font-size: 14px;
+          color: $black;
+        }
+      }
+    }
+
+    .stepper-line {
+      height: 2px;
+      width: 100%;
+      background-color: rgba($color: $black, $alpha: 0.1);
+      position: absolute;
+      bottom: calc(100% - 28px);
+      left: 0px;
+      right: 0px;
+    }
+  }
+
+  .stepper-container {
+    margin-bottom: 26px;
+  }
+
+  @media screen and (max-width: $min-sm) {
+    .stepper-head {
+      .step-item {
+        padding: 4px 8px;
+
+        .state {
+          margin-left: 8px;
+          width: 24px;
+          height: 24px;
+          font-size: 16px;
+        }
+
+        span {
+          font-size: 12px;
+        }
+
+        &.active {
+          .state {
+            &::after {
+              font-size: 12px;
+            }
+          }
+
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .stepper-line {
+        bottom: calc(100% - 20px);
+      }
+    }
+  }
+}

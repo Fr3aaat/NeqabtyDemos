@@ -129,10 +129,12 @@ nav.navbar {
   }
 
   .user-action {
+    margin-right: auto;
+
     &.dropdown {
       .dropdown-toggle {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         padding-left: 0;
 
         &::after {
@@ -161,9 +163,13 @@ nav.navbar {
         }
 
         .arrow {
-          font-size: 12px;
-          color: rgba($color: $black, $alpha: 0.7);
+          color: $primary;
           margin-right: 12px;
+          display: none;
+
+          i{
+            font-size: 12px;
+          }
         }
 
         &.show {
@@ -178,10 +184,12 @@ nav.navbar {
   @media screen and (max-width: $min-lg) {
     padding: 10px;
 
+    .container {
+      flex-direction: row-reverse;
+    }
+
     .navbar-brand {
-      border-right: 2px solid rgba($color: $black, $alpha: 0.1);
       border-left: 0px;
-      padding-right: 16px;
       padding-left: 0px;
 
       img {
@@ -191,6 +199,7 @@ nav.navbar {
 
     .navbar-nav {
       padding: 16px 26px;
+      padding-bottom: 0px;
 
       .nav-item {
         margin-left: 0px;
@@ -205,7 +214,7 @@ nav.navbar {
     .navbar-toggler {
       padding: 0;
       border: 0;
-      padding-left: 16px;
+      padding-left: 0px;
       color: rgba($color: $black, $alpha: 0.5);
 
       &:focus,
@@ -217,7 +226,7 @@ nav.navbar {
 
     .navbar-collapse {
       position: absolute;
-      top: 56px;
+      top: 54px;
       left: 0px;
       right: 0px;
       bottom: 0px;
@@ -227,22 +236,36 @@ nav.navbar {
 
       .navbar-nav {
         background: $white;
-        height: 100%;
       }
     }
 
     .user-action {
+      margin: 0px;
+      border-top: 1px solid rgba($color: $black, $alpha: 0.1);
+      padding-top: 6px;
+
       &.dropdown {
         .dropdown-toggle {
           .user-avatar {
             img {
               margin-left: 4px;
+              max-height: 24px;
             }
-  
+
             span {
-              font-size: 11px;
+              font-size: 14px;
             }
           }
+
+          .arrow {
+            display: flex;
+            padding-bottom: 2px;
+          }
+        }
+
+        .dropdown-menu{
+          position: relative;
+          margin: 0px 16px;
         }
       }
     }

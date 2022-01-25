@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SyndicatesComponent } from './pages/syndicates/syndicates.component';
 import { NewsComponent } from './pages/news/news.component';
 import { NewsInnerComponent } from './pages/news-inner/news-inner.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'createAccount', component: SignUpComponent },
   { path: 'forgetPassword', component: ForgetPasswordComponent },
+  { path: 'syndicates', component: SyndicatesComponent },
   { path: 'news', component: NewsComponent },
   { path: 'news/:id', component: NewsInnerComponent },
   { path: 'payment', component: PaymentsComponent },

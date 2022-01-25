@@ -179,6 +179,35 @@
   }
 }
 
+// card box
+.card-box {
+  padding: 26px;
+  border-radius: 18px;
+  border: 1px solid rgba($color: $black, $alpha: 0.1);
+  background-color: rgba($color: $black, $alpha: 0.02);
+
+  .card-box-head {
+    border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+    padding-bottom: 26px;
+
+    .head-title {
+      font-size: 22px;
+      font-family: "DinnNext-Bold";
+      margin-bottom: 0px;
+    }
+  }
+
+  .card-box-body {
+    padding: 26px 0px;
+  }
+
+  .card-box-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
 @media screen and (max-width: $min-lg) {
 
   // card banner
