@@ -17,8 +17,8 @@
             data-bs-target=".navbar-collapse.show">الرئيسية</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/syndicates" routerLinkActive="active" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show">النقابات</a>
+          <a class="nav-link" aria-current="page" routerLink="/syndicates" routerLinkActive="active"
+            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">النقابات</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
@@ -26,6 +26,7 @@
             الخدمات
           </a>
           <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <li class="dropdown-item-subhead">الخدمات</li>
             <li><a class="dropdown-item" routerLink="/courses" routerLinkActive="active" data-bs-toggle="collapse"
                 data-bs-target=".navbar-collapse.show">الدورات التعليمية</a></li>
             <li><a class="dropdown-item" routerLink="/trips" routerLinkActive="active" data-bs-toggle="collapse"
@@ -47,8 +48,10 @@
         <button class="btn dropdown-toggle" type="button" id="userProfile" data-bs-toggle="dropdown"
           aria-expanded="false">
           <div class="user-avatar">
-            <img src="assets/images/user-avatar.png" class="img-fluid" alt="user-avatar" />
-            <span>اسم المستخدم</span>
+            <div class="icon">
+              <img src="assets/images/svg/user-avatar.svg" class="img-fluid" alt="user-avatar" />
+            </div>
+            <h6>مرحبا بك، <span>شادى</span></h6>
           </div>
 
           <div class="arrow">
@@ -56,7 +59,25 @@
           </div>
         </button>
         <ul class="dropdown-menu" aria-labelledby="userProfile">
-          <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+          <li class="dropdown-item-subhead">الإعدادات</li>
+          <li>
+            <a class="dropdown-item" routerLink="/profile">
+              <img src="assets/images/svg/user-avatar.svg" class="img-fluid" alt="user-action" />
+              <span>تعديل الملف الشخصي</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/profile">
+              <img src="assets/images/svg/setting.svg" class="img-fluid" alt="setting-icon" />
+              <span>إعدادت الحساب</span>
+            </a>
+          </li>
+          <li class="sign-out-item">
+            <a class="dropdown-item" routerLink="/login">
+              <img src="assets/images/svg/sign-out.svg" class="img-fluid" alt="sign-out" />
+              <span>خروج</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

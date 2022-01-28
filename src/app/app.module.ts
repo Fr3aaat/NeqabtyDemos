@@ -48,6 +48,7 @@ import { OffersCardsComponent } from './pages/Courses-module/offers-cards/offers
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { TopNewsComponent } from './components/sliders/top-news/top-news.component';
 import { SyndicatesComponent } from './pages/syndicates/syndicates.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -87,6 +88,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BreadcrumbComponent,
     TopNewsComponent,
     SyndicatesComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

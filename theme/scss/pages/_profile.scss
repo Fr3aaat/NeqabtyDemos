@@ -1,0 +1,249 @@
+.profile-page {
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    background-image: url(../../../src/assets/images/svg/bg-clip.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &::before {
+    top: 100px;
+    right: -26%;
+  }
+
+  &::after {
+    bottom: -40px;
+    left: -26%;
+    transform: rotate(180deg);
+  }
+
+  .sidemenu-list {
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: 0px 1px 8px #0000000B;
+    border: 1px solid rgba($color: $black, $alpha: 0.1);
+    padding: 26px;
+
+    .sidemenu-header {
+      border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+      padding-bottom: 16px;
+      margin-bottom: 26px;
+
+      h6 {
+        font-size: 18px;
+        font-family: "DinnNext-Bold";
+        margin-bottom: 4px;
+      }
+
+      p {
+        font-size: 16px;
+        color: rgba($color: $black, $alpha: 0.4);
+        margin-bottom: 0px;
+      }
+    }
+
+    .sidemenu-container {
+      .nav {
+        .nav-link {
+          display: flex;
+          align-items: center;
+          padding: 14px 16px;
+          border-radius: 14px;
+
+          .icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            background-color: $primary;
+            border-radius: 50%;
+            margin-left: 14px;
+
+            img {
+              filter: brightness(0) invert(1);
+            }
+          }
+
+          h5 {
+            font-size: 16px;
+            margin-bottom: 0px;
+            color: $black;
+            padding-bottom: 6px;
+          }
+
+          &.active {
+            background-color: rgba($color: $primary, $alpha: 0.16);
+          }
+        }
+      }
+    }
+  }
+
+  // profile card
+  .profile-card {
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: 0px 1px 8px #0000000B;
+    border: 1px solid rgba($color: $black, $alpha: 0.1);
+    padding: 26px;
+
+    .profile-card-header {
+      border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+      margin-bottom: 26px;
+      padding-bottom: 26px;
+
+      .profile-avatar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+
+        img {
+          max-height: 70px;
+          margin-left: 16px;
+        }
+
+        .username {
+          font-size: 18px;
+          margin-bottom: 0px;
+          color: $primary;
+          font-family: "DinnNext-Medium";
+        }
+      }
+
+      .user-info-item {
+        margin-bottom: 12px;
+
+        h5 {
+          font-size: 16px;
+          color: rgba($color: $black, $alpha: 0.4);
+          margin-bottom: 4px;
+          font-weight: 600;
+        }
+
+        p {
+          color: $black;
+          font-size: 16px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    .profile-card-body {
+      .title {
+        font-size: 18px;
+        font-family: "DinnNext-Bold";
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $min-md) {
+
+    &::before,
+    &::after {
+      width: 400px;
+      height: 400px;
+    }
+
+    &::before {
+      top: -3%;
+      right: -22%;
+    }
+
+    &::after {
+      bottom: -3%;
+      left: -22%;
+    }
+
+    .sidemenu-list {
+      padding: 16px;
+
+      .sidemenu-header {
+        margin-bottom: 16px;
+
+        p {
+          font-size: 15px;
+        }
+      }
+
+      .sidemenu-container {
+        .nav {
+          .nav-link {
+            .icon {
+              width: 26px;
+              height: 26px;
+            }
+
+            h5 {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    // profile card
+    .profile-card {
+      padding: 16px;
+
+      .profile-card-header {
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+
+        .profile-avatar {
+          margin-bottom: 20px;
+
+          img {
+            max-height: 50px;
+            margin-left: 14px;
+          }
+
+          .username {
+            font-size: 16px;
+          }
+        }
+
+        .user-info-item {
+          margin-bottom: 10px;
+
+          h5 {
+            font-size: 15px;
+          }
+
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .profile-card-body {
+        .title {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $min-sm) {
+    &::before {
+      top: -2%;
+      right: -50%;
+    }
+
+    &::after {
+      bottom: -2%;
+      left: -50%;
+    }
+  }
+}
